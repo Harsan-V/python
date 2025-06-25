@@ -17,7 +17,7 @@ while (True):
         print("2. SQUARE")
         print("3. RECTANGLE")
         print("4. TRIANGLE")
-        x = int(input(print("ENTER YOUR CHOICE : ")))
+        x = int(input("ENTER YOUR CHOICE : "))
         match x:
             case 1:
                 print("The area of the circle is...",circle())
