@@ -1,0 +1,42 @@
+def circle():
+    r = float(input("Enter the radius: "))
+    print(3.14*r*r)
+def square(a):
+    print(a*a)
+def rectangle():
+    length = float(input("Enter the length: "))
+    width = float(input("Enter the width: "))
+    return length*width
+def triangle(b,h):
+
+    return 0.5*b*h
+
+while (True):
+
+        print("1. CIRCLE")
+        print("2. SQUARE")
+        print("3. RECTANGLE")
+        print("4. TRIANGLE")
+        x = int(input(print("ENTER YOUR CHOICE : ")))
+        match x:
+            case 1:
+                print("The area of the circle is...",circle())
+            case 2:
+                a = int(input("Enter the side: "))
+                print("The area of the square is...",square(a))
+            case 3:
+                res= rectangle()
+                print("The area of the rectangle is...",res)
+            case 4:
+                l = int(input("Enter the length of the triangle: "))
+                b = int(input("Enter the bredth of the triangle: "))
+                res1=triangle(b,l)
+                print("The area of the triangle is...",res1)
+            case _:
+                break
+
+
+
+
+
+
