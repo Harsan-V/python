@@ -1,0 +1,29 @@
+# To Write a Program  to print what day is december 31st  in calender :
+
+
+year = int(input("Enter the year : "))
+
+b = year % 400
+c = b // 100
+d = b % 100
+e =  d//4
+f = d-e
+g = ((c*5)+(e*2)+f)%7
+
+match g:
+    case 0:
+        print(" SUNDAY")
+    case 1:
+        print(" MONDAY")
+    case 2:
+        print(" TUESDAY")
+    case 3:
+        print(" WEDNESSDAY")
+    case 4:
+        print(" THURSDAY")
+    case 5:
+        print(" FRIDAY")
+    case 6:
+        print(" SATURDAY")
+    case _:
+        print(" ERROR")
