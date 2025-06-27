@@ -1,0 +1,50 @@
+'''
+
+class person:
+    com = "TCS"
+    def __init__(self,name,age):
+        self.name = name
+        self.age = age
+    def display(self):
+        print("Name : ", self.name)
+        print("Age : ",self.age)
+        print("Company : ",person.com)
+s1 = person("Harsan",21)
+s = person("sarvesh",24)
+s.display()
+print("-------------------")
+s1.display()
+
+'''
+
+class emp:
+    company = "CTS"
+    tax_percentage = 10
+    profit = 500000
+    def __init__(self,name,age,salary,share_percentage):
+        self.name = name
+        self.age = age
+        self.salary = salary
+        self.share_percentage = share_percentage
+        self.tax = 0
+        self.share = 0
+    def tax_to_pay(self):
+        self.tax = (self.salary * emp.tax_percentage*0.01)
+    def share_from_company(self):
+        self.share = (emp.profit * self.share_percentage*0.01)
+    def display(self):
+        self.tax_to_pay()
+        self.share_from_company()
+        print("Name : ",self.name)
+        print("Age : ",self.age)
+        print("Salary : ",self.salary)
+        print("Tax : ",self.tax)
+        print("Share from company: ",self.share)
+
+e1 = emp("Harsan",21,56000,11)
+e2 = emp("sarvesh",24,50000,12)
+e3 = emp("balaji",35,87000,13)
+e1.display()
+e2.display()
+e3.display()
+
