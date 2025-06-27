@@ -1,0 +1,14 @@
+class person:
+    com = "TCS"
+    def __init__(self,name,age):
+        self.name = name
+        self.age = age
+    def display(self):
+        print("Name : ", self.name)
+        print("Age : ",self.age)
+        print("Company : ",person.com)
+s1 = person("Harsan",21)
+s = person("sarvesh",24)
+s.display()
+print("-------------------")
+s1.display()
