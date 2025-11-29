@@ -1,0 +1,25 @@
+array = []
+size = int(input('Enter the size of the array : '))
+for i in range(size):
+    num = int(input(f'Enter the Number {i+1} in the Array  : '))
+    array.append(num)
+print('Your Array after sorted is : ',end = " ")
+array.sort()
+print(array)
+target = int(input('Enter the target value : '))
+left = 0
+right = len(array)-1
+found = False
+while left < right:
+    sum = array[left] + array[right]
+    if sum == target:
+        print(array[left],array[right])
+        found = True
+        break
+    elif sum<target:
+        left = left+1
+    else:
+        right = right-1
+        
+if not found:
+    print('No Pair found !')
