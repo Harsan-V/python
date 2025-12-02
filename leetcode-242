@@ -1,0 +1,14 @@
+s = "caat"
+t = "aact"
+
+if len(s) != len(t):
+    print(False)
+else:
+    for char in s:
+        if char in t:
+            t = t.replace(char,"",1)
+        else:
+            print(False)
+            break
+    else:
+        print(True)
