@@ -1,3 +1,4 @@
+# solution with Time complexity o(n)
 class Solution(object):
     def lengthOfLongestSubstring(self, s):
         last_seen = {}   # char -> last index
@@ -14,3 +15,15 @@ class Solution(object):
             max_len = max(max_len, right - left + 1)
 
         return max_len
+
+# Solution with Time Complexity o(n^2)
+
+s1 = []
+max_len = 0
+
+for i in s:
+    if i in s1:
+        s1 = s1[s1.index(i)+1:]
+    s1.append(i)
+    max_len = max(max_len,len(s1))
+print(max_len)
