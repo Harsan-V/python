@@ -1,0 +1,28 @@
+#brute force
+from collections import Counter
+
+class Solution(object):
+    def minWindow(self, s, t):
+        if not s or not t:
+            return ""
+
+        need = Counter(t)
+        min_len = float("inf")
+        result = ""
+
+        for i in range(len(s)):
+            for j in range(i, len(s)):
+                sub = s[i:j+1]
+                freq = Counter(sub)
+
+                valid = True
+                for ch in need:
+                    if freq[ch] < need[ch]:
+                        valid = False
+                        break
+
+                if valid and len(sub) < min_len:
+                    min_len = len(sub)
+                    result = sub
+
+        return result
