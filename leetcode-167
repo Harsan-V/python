@@ -1,4 +1,4 @@
-#  optimal solution
+#  optimal solution (best)
 
 class Solution(object):
     def twoSum(self, numbers, target):
@@ -12,3 +12,13 @@ class Solution(object):
                 l += 1
             else:
                 r -= 1
+# optimal solution (minimal) --- using hashmp
+number = []
+target = 
+seen = {}
+for i in range(len(numbers)):
+    num = numbers[i]
+    need = target-num
+    if need in seen:
+        print([seen[need]+1,i+1])
+    seen[num] = i
