@@ -1,0 +1,39 @@
+# optimal Solution 
+
+class Solution(object):
+    def mostBooked(self, n, meetings):
+        import heapq
+
+        # 1. Sort meetings by start time (mandatory)
+        meetings.sort()
+
+        # 2. Min-heap of free rooms (room index)
+        free_rooms = list(range(n))
+        heapq.heapify(free_rooms)
+
+        # 3. Min-heap of busy rooms: (end_time, room_index)
+        busy_rooms = []
+
+        # 4. Count meetings per room
+        count = [0] * n
+
+        for start, end in meetings:
+            # Free rooms that are done before this meeting starts
+            while busy_rooms and busy_rooms[0][0] <= start:
+                end_time, room = heapq.heappop(busy_rooms)
+                heapq.heappush(free_rooms, room)
+
+            if free_rooms:
+                # Assign smallest free room
+                room = heapq.heappop(free_rooms)
+                heapq.heappush(busy_rooms, (end, room))
+            else:
+                # No room free → wait for earliest finishing room
+                end_time, room = heapq.heappop(busy_rooms)
+                duration = end - start
+                heapq.heappush(busy_rooms, (end_time + duration, room))
+
+            count[room] += 1
+
+        # Return room with max meetings (tie → smallest index)
+        return max(range(n), key=lambda i: (count[i], -i))
