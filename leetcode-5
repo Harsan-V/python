@@ -1,0 +1,26 @@
+class Solution(object):
+    def longestPalindrome(self, s):
+        if not s or len(s) < 1:
+            return ""
+
+        left = right = 0
+
+        for i in range(len(s)):
+            len1 = self.checkPalindrome(s, i, i)     # odd length
+            len2 = self.checkPalindrome(s, i, i + 1) # even length
+            curr_len = max(len1, len2)
+
+            if curr_len > right - left:
+                left = i - (curr_len - 1) // 2
+                right = i + curr_len // 2
+
+        return s[left:right + 1]
+
+    def checkPalindrome(self, s, left, right):
+        L, R = left, right
+
+        while L >= 0 and R < len(s) and s[L] == s[R]:
+            L -= 1
+            R += 1
+
+        return R - L - 1
