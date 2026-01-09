@@ -1,3 +1,4 @@
+#optimal solution Time complexity : o(n) using Dutch National Flag Algorithm
 class Solution(object):
     def sortColors(self, nums):
         low = 0
