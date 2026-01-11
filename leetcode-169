@@ -8,7 +8,8 @@ class Solution(object):
             if value > len(nums)//2:
                 return key
                 break
-#most optimal solution with Time Complexity : o(1)
+# Most optimal solution with Time Complexity : o(1)
+Boyer–Moore Voting Algorithm:
 
 class Solution(object):
     def majorityElement(self, nums):
