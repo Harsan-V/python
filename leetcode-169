@@ -1,4 +1,4 @@
-Solution with more Time Complexity
+Solution with more Time Complexity: o(n)
 
 from collections import Counter
 class Solution(object):
@@ -8,3 +8,16 @@ class Solution(object):
             if value > len(nums)//2:
                 return key
                 break
+#most optimal solution with Time Complexity : o(1)
+
+class Solution(object):
+    def majorityElement(self, nums):
+        candidate = None
+        count = 0
+
+        for num in nums:
+            if count == 0:
+                candidate = num
+            count += 1 if num == candidate else -1
+
+        return candidate
